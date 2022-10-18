@@ -1,0 +1,18 @@
+<?php
+include('connect.php');
+if (isset($_GET['deleteid'])) {
+    $id=$_GET['deleteid'];
+
+    $sql="DELETE FROM `doctors` WHERE id= $id";
+    $result=mysqli_query($conn,$sql);
+    if ($result) {
+        
+        header('location:all_doc.php');
+        
+     
+    }
+    else{
+        echo "error";
+    }
+}
+?>
